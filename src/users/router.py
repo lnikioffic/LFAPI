@@ -10,4 +10,3 @@ router = APIRouter(prefix='/users', tags=['Users'])
 @router.post('')
 async def create_user(user: CreateUser):
     return await service.create_user(user)
-
