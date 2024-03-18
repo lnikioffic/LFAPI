@@ -1,22 +1,18 @@
-from fastapi import FastAPI, Body, Path
-from pydantic import EmailStr
-from typing import Annotated
+from fastapi import FastAPI
 import uvicorn
 
-from items.items_views import router as items_router
+from items.router import router as items_router
+from users.router import router as users_route
 
 app = FastAPI(title='main')
 app.include_router(items_router)
+app.include_router(users_route)
 
 
 @app.get('/')
 async def hello():
     return {'mess': 'Hello world'}
 
-
-@app.post('/user')
-async def create_user(email: EmailStr = Body()):
-    return {'mess': 'success', 'email': email}
 
 
 if __name__ == '__main__':
