@@ -9,6 +9,9 @@ from alembic import context
 
 from src.models import Base
 from src.items.models import *
+from src.users.models import *
+from src.post.models import *
+
 from src.config import settings
 
 # this is the Alembic Config object, which provides
