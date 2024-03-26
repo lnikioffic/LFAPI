@@ -1,4 +1,4 @@
-from users.shemas import CreateUser
+from src.users.shemas import CreateUser
 
 
 async def create_user(user_new: CreateUser):

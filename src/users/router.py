@@ -1,7 +1,7 @@
 from typing import Annotated
 from fastapi import Path, APIRouter
-from users.shemas import CreateUser
-from users import service
+from src.users.shemas import CreateUser
+from src.users import service
 
 
 router = APIRouter(prefix='/users', tags=['Users'])
