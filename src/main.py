@@ -18,11 +18,3 @@ app.include_router(users_route)
 @app.get('/')
 async def hello():
     return {'mess': 'Hello world'}
-
-
-if __name__ == '__main__':
-    pass
-    # uvicorn.run(
-    #     app='main:app',
-    #     reload=True
-    # )

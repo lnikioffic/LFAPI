@@ -4,9 +4,7 @@ from src.mixins import UserRelationMixin
 from src.models import Base
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy import String, ForeignKey
-
-if TYPE_CHECKING:
-    from src.post.models import Post
+from src.post.models import Post
     
 
 class User(Base):
@@ -14,6 +12,12 @@ class User(Base):
 
     posts: Mapped[list['Post']] = relationship(back_populates='user')
     profile: Mapped['Profile'] = relationship(back_populates='user')
+
+    def __str__(self):
+        return f"{self.__class__.__name__}(id={self.id}, username={self.username!r})"
+
+    def __repr__(self):
+        return str(self)
 
 
 class Profile(Base, UserRelationMixin):
