@@ -1,7 +1,7 @@
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
 
-from src.items.router import router as items_router
+from src.product.router import router as items_router
 from src.users.router import router as users_route
 
 

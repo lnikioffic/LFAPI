@@ -2,8 +2,8 @@ from src.database import db
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.engine import Result
 from sqlalchemy import select
-from src.items.shemas import Product, ProductCreate, ProductUpdate, ProductUpdatePartial
-from src.items.models import Product
+from src.product.shemas import Product, ProductCreate, ProductUpdate, ProductUpdatePartial
+from src.product.models import Product
 
 
 async def get_products(session: AsyncSession) -> list[Product]:

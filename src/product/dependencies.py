@@ -3,9 +3,9 @@ from typing import Annotated
 from fastapi import Path, Depends, HTTPException, status
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from src.items.models import Product
+from src.product.models import Product
 from src.database import db
-from src.items import service
+from src.product import service
 
 
 async def product_by_id(

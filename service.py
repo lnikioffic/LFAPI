@@ -132,9 +132,7 @@ async def get_profiles_with_users_and_users_with_posts(session: AsyncSession):
         print(profile.user.posts)
 
 
-
-async def main():
-    async with db.session_factory() as session:
+async def main_relations(session: AsyncSession):
         # await create_user(session=session, username="john")
         # await create_user(session=session, username="alice")
         # await create_user(session=session, username="sam")
@@ -176,6 +174,15 @@ async def main():
         # print('-' * 10)
         # await get_users_with_posts_and_profiles(session=session)
         await get_profiles_with_users_and_users_with_posts(session=session)
+
+
+async def demo_m2m(session: AsyncSession):
+    pass
+
+
+async def main():
+    async with db.session_factory() as session:
+        await demo_m2m(session)
 
 
 
